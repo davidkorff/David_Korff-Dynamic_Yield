@@ -1,4 +1,5 @@
 window.onload=prepareFrame()
+
 function prepareFrame() {
         name = prompt("Please enter your name", "")
         if (name!=="" && name!=="null"){
@@ -6,11 +7,9 @@ function prepareFrame() {
           iframe.setAttribute("src", "frame.html")
           iframe.setAttribute("name", `${name}`)
           iframe.setAttribute("id", `${name}`)
-          iframe.style.width = "500px"
-          iframe.style.height = "500px"
+          iframe.setAttribute("style", "width: 250px; height: 500px;")
+          iframe.setAttribute("class", "movable")
           document.body.appendChild(iframe)
-          addHandle(document.getElementById(`${name}`), window)
-
           sendJoinMessage(`${name}`)
       }
     }

@@ -4,15 +4,17 @@
     <meta charset="utf-8">
     <title></title>
   </head>
+  <style media="screen">
+    body {
+      background-color: gray;
+    }
+  </style>
   <body>
-    <div id="convoField" style ="width: 500px; height: 450px;">
-
-
-    </div>
+    <div id="convoField" style ="width: 230px; height: 450px; max-height: 450; overflow: auto; border: 1px solid #000; background-color: lightblue;"></div>
     <input type="text" id="myText" value="">
     <button onclick="submitText()">Try it</button>
-    <script type="text/javascript" src=frame.js>
+    <!-- <script type="text/javascript" src="drag.js"></script> -->
+    <script type="text/javascript" src=frame.js></script>
 
-    </script>
   </body>
 </html>

@@ -1,3 +1,5 @@
+
+
 function submitText(){
   if (document.getElementById("myText").value!==""){
     message = `[${window.name}] - ${document.getElementById("myText").value} <br>`
