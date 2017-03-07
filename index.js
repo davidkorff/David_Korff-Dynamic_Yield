@@ -1,3 +1,10 @@
+
+// for (let i = 0; i<$('.tile').length; i++){
+//     if (parseInt($('.tile')[i].children[5].innerText.replace('$',''))>=100){
+//         $('.tile')[i].remove()
+//     }
+// }
+
 window.onload=prepareFrame()
 function prepareFrame() {
         name = prompt("Please enter your name", "")
@@ -9,10 +16,11 @@ function prepareFrame() {
           iframe.style.width = "500px"
           iframe.style.height = "500px"
           document.body.appendChild(iframe)
+          addHandle(document.getElementById(`${name}`), window)
+
           sendJoinMessage(`${name}`)
       }
     }
-
 window.addEventListener('message', receiveMessage)
 
 function receiveMessage(){
@@ -20,7 +28,6 @@ function receiveMessage(){
   for (let i = 0; i<array.length; i++){
     var receiver = array[i].contentWindow
     receiver.postMessage(event.data, '*');
-    // sendMessage(event.data, receiver)
   }
 }
 
@@ -29,6 +36,5 @@ function sendJoinMessage(name){
   for (let i = 0; i<array.length; i++){
     var receiver = array[i].contentWindow
     receiver.postMessage(`[system] - ${name} joined the conversation<br>`, '*')
-    // sendMessage(event.data, receiver)
   }
 }
