@@ -1,11 +1,11 @@
-//This is the basic answer
+//This one is the basic answer
 for (let i = 0; i<$('.tile').length; i++){
     if (parseInt($('.tile')[i].children[5].innerText.replace('$',''))>100){
         $('.tile')[i].style.visibility="hidden"
     }
 }
 
-// this will change the tile's details
+// this one will change the tile's details
 for (let i = 0; i<$('.tile').length; i++){
   var price = parseFloat($('.tile')[i].children[5].innerText.replace('$','')
    if (price)>100){
